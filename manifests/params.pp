@@ -26,7 +26,7 @@ class redis::params {
       $service       = 'redis-server'
       $conf          = '/etc/redis/redis.conf'
       $conf_template = 'redis.debian.conf.erb'
-      $pidfile       = '/var/run/redis.pid'
+      $pidfile       = '/var/run/redis/redis-server.pid'
       $logfile       = '/var/log/redis/redis-server.log'
     }
     default: {
