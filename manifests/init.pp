@@ -108,15 +108,14 @@ class redis (
 
   file { $::redis::params::conf:
     path    => $::redis::params::conf,
-    content => template("redis/$::redis::params::conf_template"),
+    content => template("redis/${::redis::params::conf_template}"),
     owner   => root,
     group   => root,
     mode    => '0644',
     notify  => Service['redis'],
   }
 
-  file { '/etc/logrotate.d/redis':
-    path    => '/etc/logrotate.d/redis',
+  file { '/etc/logrotate.d/redis-server':
     content => template('redis/redis.logrotate.erb'),
     owner   => root,
     group   => root,
